@@ -168,11 +168,9 @@ const forage = function (min, max, country) {
     message += ` Leider können du und deine Gefährten nur ${maxRations} tragen. Der Rest wird zurückgelassen.`;
     postMessage(message);
     ration = maxRations;
-    //console.log('Version 1: ' + ration);
     postRation(ration);
   } else {
     ration += foundRations;
-    //console.log('Version 2: ' + ration);
     postRation(ration);
   }
   foragedYet = true;
@@ -200,11 +198,9 @@ const maraud = function (
     message += ` Leider können du und deine Gefährten nur ${maxRations} tragen. Der Rest wird zurückgelassen.`;
     postMessage(message);
     ration = maxRations;
-    //console.log('Version 1: ' + ration);
     postRation(ration);
   } else {
     ration += foundRations;
-    //console.log('Version 2: ' + ration);
     postRation(ration);
   }
   foragedYet = true;
@@ -220,7 +216,7 @@ btnMove.addEventListener('click', function () {
   stage += 1;
   foragedYet = false;
   btnForage.classList.remove('hidden');
-  //^ In der Stadt
+  //TODO In der Stadt
   // console.log(cityStage); // Wird korrekt angezeigt.
   // console.log(cityStage.includes(stage)); //! Warum immer false?
   // if (cityStage.includes(stage)) {
@@ -250,7 +246,6 @@ btnMove.addEventListener('click', function () {
   }
   switch (true) {
     case stage >= 1 && stage < 4:
-      //! Ich muss hier Wertebereiche definieren, also 1-3
       country = 'Deutschland';
       postMessage(deutschland.countryDescription);
       console.log('Message: ' + message);
@@ -331,13 +326,9 @@ btnMove.addEventListener('click', function () {
     foundGold = 0;
     losses = 0;
   });
+
   //^ Sieg bei Erreichen von Stage 20 mit einem oder mehr Reisenden
   if (stage == 20 && traveller >= 1) {
-    /**
-     * TODO: Buttons entfernen oder löschen
-     * TODO: Button "Nochmal spielen"
-     * TODO: Siegertext
-     */
     btnMove.classList.add('hidden');
     btnForage.classList.add('hidden');
     btnMaraud.classList.add('hidden');
@@ -391,6 +382,7 @@ btnForage.addEventListener('click', function () {
       break;
   }
 });
+
 //^ Marodieren Button klicken
 btnMaraud.addEventListener('click', function () {
   switch (country) {
