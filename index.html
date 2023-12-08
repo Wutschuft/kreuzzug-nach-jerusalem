@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreuzzug nach Jerusalem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <header class="gui-element">
+        <h1>Kreuzzug nach Jerusalem</h1>
+        <button class="show-modal">Hilfe</button>
+    </header>
+    <main>
+
+        <div class="upper">
+            <!-- <div class="keyvisual"> <img src="images/kreuzzug.jpg" alt="Kreuzzug nach Jerusalem"></div> -->
+            <div class="description gui-element">
+                <h2>Situation</h2>
+                <div class="message">
+                    <p>Seit dem 7. Jahrhundert nach Christus ist Jerusalem in der Hand muslimischer Völker.</p>
+                    <p>Du bist fest entschlossen das heilige Land aus der Händen der Ungläubigen zu entreißen. Mit einer
+                        kleinen Schar machst du dich auf den beschwerlichen Weg von Regensburg nach Jerusalem.</p>
+                    <p>Doch auf der langen Reise lauern unzählige Gefahren, die nicht jeder überlebt.</p>
+
+                    <!-- <a href="temp.html">Test</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="lower">
+            <div class="status gui-element">
+                <h2>Status</h2>
+                <span class="status-label">Etappe:</span><span class="status-stage status-value">1</span><br>
+                <span class="status-label">Reisegefährten:</span><span
+                    class="status-traveller status-value">100</span><br>
+                <span class="status-label">Rationen:</span><span class="status-ration status-value">700</span><br>
+                <span class="status-label">Gold:</span><span class="status-gold status-value">50</span><br>
+                <span class="status-label">Land:</span><span class="status-country status-value">Deutschland</span><br>
+            </div>
+            <div class="options gui-element">
+                <h2>Was wirst du tun?</h2>
+                <div class="order">
+                    <button class="btn btn--move">Weiterreisen</button>
+                    <button class="btn btn--forage">Nahrungssuche</button>
+                    <button class="btn btn--maraud">Marodieren</button>
+                    <button class="btn btn--buyfood hidden">Essen kaufen</button>
+                    <button class="btn btn--preach hidden">Predigen</button>
+                    <button class="btn btn--replay hidden">Nochmal spielen</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="gui-element">&copy; 2023 by Arne Groh</footer>
+    <div class="help-modal hidden">
+        <button class="close-modal">&times;</button>
+        <h2>Hilfe</h2>
+        <p>Jeder Spielzug kostet dich pro Reisenden eine Ration.</p>
+        <p>Jeder Spielzug kann ein Zufallsereignis auslösen. Dieses kann positiv oder negativ ausfallen.</p>
+        <p>Nach den Spielzügen stehen dir eine Reihe von Aktionen zur Verfügung.</p>
+        <p>In Städten kannst du deine Vorräte auffrischen und neue Gefährten finden</p>
+        <p>Wenn du es schaffst, das Ziel zu erreichen, ohne dass dir das Essen ausgeht und du mit mindestens
+            einem Reisenden ankommst, gewinnst du das Spiel.</p>
+        <p>Gesteuert wird über die Maus.</p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

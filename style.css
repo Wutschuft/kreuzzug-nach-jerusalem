@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=UnifrakturCook:wght@700&display=swap');
+
+:root {
+  --primary: #5c544e;
+  --primaryLight: #998b82;
+  --primaryDark: #332e2b;
+  --neutral: #555;
+  --neutralLight: #888;
+  --neutralDark: #333;
+  --transparent1: rgba(255, 255, 255, 0.5);
+  --transparent2: rgba(255, 255, 255, 0.8);
+  --shadow1: rgba(0, 0, 0, 0.3);
+  --shadow2: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(images/parchment.jpg) repeat;
+  font-family: 'Merriweather', serif;
+  font-size: 2em;
+  color: var(--primaryDark);
+  font-size: 1.4rem;
+}
+
+header {
+  position: relative;
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+main {
+  width: 90vw;
+  background-color: var(--transparent1);
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.upper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gui-element {
+  background-color: var(--transparent1);
+  padding: 10px;
+}
+
+.keyvisual {
+  height: 35vh;
+  flex: 1 1 33%;
+  overflow: hidden;
+}
+
+.keyvisual img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.description {
+  height: 35vh;
+  flex: 1 1 66%;
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stats {
+  height: 35vh;
+  flex: 1 1 33%;
+}
+
+.options {
+  height: 35vh;
+  flex: 1 1 66%;
+}
+
+h1 {
+  font-family: 'UnifrakturCook', cursive;
+  text-align: center;
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+footer {
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+.status-label {
+  display: inline-block;
+  width: 100px;
+}
+
+.status-value {
+  display: inline-block;
+  text-align: right;
+  width: 150px;
+}
+
+.order a {
+  text-decoration: none;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  width: 180px;
+  text-align: left;
+  padding: 5px 10px 5px 40px;
+  margin-bottom: 5px;
+  color: inherit;
+  background-color: var(--primaryLight);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+
+.order .btn::before {
+  /* content: '↪ ';
+  padding-right: 7px; */
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  content: "";
+  background: url(images/triskelion.png) no-repeat;
+  background-size: 20px 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  /* padding-right: 7px; */
+}
+
+.help-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: var(--transparent2);
+  padding: 6rem;
+  border-radius: 5px;
+  border: 2px solid;
+  box-shadow: 0 3rem 5rem var(--shadow1);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--shadow2);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: var(--primaryDark);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.show-modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 1rem 2rem;
+  border: 2px solid;
+  background-color: var(--transparent1);
+  color: var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
