@@ -61,7 +61,7 @@ class Country {
   ) {
     this.countryName = countryName;
     this.countryDescription = countryDescription;
-    this.forageMessage = forageMessage;
+    // this.forageMessage = forageMessage;
     this.maraudMessage = maraudMessage;
     this.preachMessage = preachMessage;
     this.buyFoodMessage = buyFoodMessage;
@@ -78,6 +78,7 @@ class Country {
 const deutschland = new Country(
   'Deutschland',
   'Während deine Schar durch Deutschland zieht, kommt ihr an vielen Dörfern und Höfen vorbei. Das Land ist bewaldet und es gibt genug Tiere zu jagen.',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.countryName}.`,
   `Essen kaufen in ${this.countryName}.`
@@ -85,6 +86,7 @@ const deutschland = new Country(
 const ungarn = new Country(
   'Ungarn',
   'Ungarn Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.countryName}.`,
   `Essen kaufen in ${this.countryName}.`
@@ -92,6 +94,7 @@ const ungarn = new Country(
 const bulgarien = new Country(
   'Bulgarien',
   'Bulgarien Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -99,6 +102,7 @@ const bulgarien = new Country(
 const latKaiserreich = new Country(
   'Lat. Kaiserreich',
   'Lat. Kaiserreich Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -106,6 +110,7 @@ const latKaiserreich = new Country(
 const nikaia = new Country(
   'Nikaia',
   'Nikaia Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -113,6 +118,7 @@ const nikaia = new Country(
 const seldschuken = new Country(
   'Seldschuken',
   'Seldschuken Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -120,6 +126,7 @@ const seldschuken = new Country(
 const kleinarmenien = new Country(
   'Kleinarmenien',
   'Kleinarmenien Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -127,6 +134,7 @@ const kleinarmenien = new Country(
 const antiochia = new Country(
   'Antiochia',
   'Antiochia Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -134,6 +142,7 @@ const antiochia = new Country(
 const ajubidenreich = new Country(
   'Ajubidenreich',
   'Ajubidenreich Beschreibung',
+  'Forage Message',
   `Beim Brandschatzen einiger Höfe fallen dir ${foundRations} Rationen und ${foundGold} Gold in die Hände. Beim Kampf mit den Einwohnern erleidest du ${losses} Verluste.`,
   `Predigen in ${this.name}.`,
   `Essen kaufen in ${this.name}.`
@@ -269,25 +278,25 @@ btnMove.addEventListener('click', function () {
       console.log('Message: ' + message);
       postCountry(country);
       break;
-    case (stage = 13):
+    case stage == 13:
       country = 'Nikaia';
       postMessage(nikaia.countryDescription);
       console.log('Message: ' + message);
       postCountry(country);
       break;
-    case (stage = 14):
+    case stage == 14:
       country = 'Seldschuken';
       postMessage(seldschuken.countryDescription);
       console.log('Message: ' + message);
       postCountry(country);
       break;
-    case (stage = 15):
+    case stage == 15:
       country = 'Kleinarmenien';
       postMessage(kleinarmenien.countryDescription);
       console.log('Message: ' + message);
       postCountry(country);
       break;
-    case (stage = 16):
+    case stage == 16:
       country = 'Antiochia';
       postMessage(antiochia.countryDescription);
       console.log('Message: ' + message);
