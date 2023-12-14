@@ -1,6 +1,6 @@
 'use strict';
 
-//^ Variablen Deklaration
+//^ variable declaration
 let stage = Number(document.querySelector('.status-stage').textContent);
 let traveller = Number(document.querySelector('.status-traveller').textContent);
 let ration = Number(document.querySelector('.status-ration').textContent);
@@ -13,32 +13,32 @@ let foundRations = 0;
 let foundGold = 0;
 let losses = 0;
 
-//^ Message posten Funktion
+//^ post message function
 const postMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
-//^ Etappe posten Funktion
+//^ post stage function
 const postStage = function (stage) {
   document.querySelector('.status-stage').textContent = stage;
 };
 
-//^ Gefährten posten Funktion
+//^ post traveller function
 const postTraveller = function (traveller) {
   document.querySelector('.status-traveller').textContent = traveller;
 };
 
-//^ Rationen posten Funktion
+//^ post ration function
 const postRation = function (ration) {
   document.querySelector('.status-ration').textContent = ration;
 };
 
-//^ Gold posten Funktion
+//^ post gold function
 const postGold = function (gold) {
   document.querySelector('.status-gold').textContent = gold;
 };
 
-//^ Land posten Funktion
+//^ post country function
 const postCountry = function (country) {
   document.querySelector('.status-country').textContent = country;
 };
@@ -50,7 +50,7 @@ const btnBuyFood = document.querySelector('.btn--buyfood');
 const btnPreach = document.querySelector('.btn--preach');
 const btnReplay = document.querySelector('.btn--replay');
 
-//^ Test Klassen
+//^ testing classes - never worked on them before
 class Country {
   constructor(
     countryName,
@@ -148,14 +148,14 @@ const ajubidenreich = new Country(
   `Essen kaufen in ${this.name}.`
 );
 
-//TODO Klasse City
+//TODO city class
 // class City {
 //   constructor(cityStage, cityName) {
 //     this.cityStage = cityStage;
 //     this.cityName = cityName;
 //   }
 // }
-//TODO Objekte der Klasse City
+//TODO city class objects
 // const wien = new City(3, 'Wien');
 // const belgrad = new City(5, 'Belgrad');
 // const nis = new City(7, 'Nis');
@@ -164,12 +164,12 @@ const ajubidenreich = new Country(
 // const konstantinopel = new City(12, 'Konstantinopel');
 // const tripolis = new City(17, 'Tripolis');
 
-//^ Würfel Funktion (min - max, min-default = 1) - vollständig
+//^ dice function (min - max, min-default = 1)
 let rollDice = function (min = 1, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
 };
 
-//^ Nahrungssuche Funktion - vollständig
+//^ forage function
 const forage = function (min, max, country) {
   foundRations = rollDice(min, max) * traveller;
   message = country.forageMessage(foundRations);
@@ -189,7 +189,7 @@ const forage = function (min, max, country) {
   return foundRations;
 };
 
-//^ Marodieren Funktion
+//^ maraud function
 const maraud = function (
   minRation,
   maxRation,
@@ -219,7 +219,7 @@ const maraud = function (
   return foundRations;
 };
 
-//^ Reisen Funktion
+//^ travel function
 btnMove.addEventListener('click', function () {
   // Stage erhöhen
   stage += 1;
@@ -312,7 +312,7 @@ btnMove.addEventListener('click', function () {
       postMessage('Mist, falsch abgebogen!');
   }
 
-  //^ Nochmal spielen - alles auf Anfang setzen
+  //^ play again - reset the game
   btnReplay.addEventListener('click', function () {
     btnMove.classList.remove('hidden');
     btnForage.classList.remove('hidden');
@@ -336,7 +336,7 @@ btnMove.addEventListener('click', function () {
     losses = 0;
   });
 
-  //^ Sieg bei Erreichen von Stage 20 mit einem oder mehr Reisenden
+  //^ win at reaching stage 20 with at least 1 traveller
   if (stage == 20 && traveller >= 1) {
     btnMove.classList.add('hidden');
     btnForage.classList.add('hidden');
@@ -350,7 +350,7 @@ btnMove.addEventListener('click', function () {
   }
 });
 
-//^ Nahrungssuche Button klicken
+//^ click forage button
 btnForage.addEventListener('click', function () {
   switch (country) {
     case 'Deutschland':
@@ -392,7 +392,7 @@ btnForage.addEventListener('click', function () {
   }
 });
 
-//^ Marodieren Button klicken
+//^ click maraud button
 btnMaraud.addEventListener('click', function () {
   switch (country) {
     case 'Deutschland':
@@ -435,9 +435,9 @@ btnMaraud.addEventListener('click', function () {
   }
 });
 
-//TODO Predigen Button klicken
-//TODO Essen kaufen Button klicken
-//^ Hilfe Modal
+//TODO click preach button
+//TODO click buy rations button
+//^ help modal
 const modal = document.querySelector('.help-modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
